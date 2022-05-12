@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    margin: 50px auto;
+    width: 80vw;
+    min-height: 75vh;
+    background-color: aquamarine;
+}
+h1, form{
+    /* font-size: 70px; */
+    text-align: center;
+}
+input, button{
+    font-size: 20px;
+}
