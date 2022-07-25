@@ -9,6 +9,12 @@ const spanS = document.querySelector('span.s');
 
 const czas = (e) => {
     e.preventDefault();
+
+    spanD.textContent = '';
+    spanH.textContent = '';
+    spanM.textContent = '';
+    spanS.textContent = '';
+
     const word = input.value;
     console.log(word);
     if(input.value == "") return;
@@ -19,6 +25,10 @@ const czas = (e) => {
         const nowTime = new Date().getTime();
 
         const time = endTime - nowTime;
+        if(Number.isNaN(time)) return;
+        else if(time<0) return;
+        else{
+        
         const days = Math.floor((endTime / (1000 * 60 * 60 * 24)) - (nowTime / (1000 * 60 * 60 * 24)));
        
         let hours = Math.floor((endTime / (1000 * 60 * 60) - nowTime / (1000 * 60 * 60)) % 24);
@@ -33,6 +43,7 @@ const czas = (e) => {
         spanH.textContent = hours;
         spanM.textContent = minutes;
         spanS.textContent = secs;
+        }
        }, 1000)
 
     input.value= "";
